@@ -68,6 +68,8 @@ img {
     cursor: pointer;
     border: 1px solid lightgray;
     flex: 0 0 auto;
+    transition: 0.3s ease-in-out;
+
 }
 
 .botao.ativa {
@@ -102,6 +104,8 @@ img {
     align-items: center;
     font-size: 15px;
     flex: 0 0 auto;
+    transition: 0.3s ease-in-out;
+
 }
 
 .botao2:hover {
@@ -132,6 +136,7 @@ img {
     opacity: 1; /* Torna visível */
     transform: translateY(0); /* Volta à posição original */
 }
+
 
 
 #agendar {
@@ -168,6 +173,7 @@ img {
     color: #778d9c;
 
 }
+
 
 
 nav {

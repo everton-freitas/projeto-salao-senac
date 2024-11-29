@@ -9,10 +9,17 @@ function aparecerMenu() {
     }
 }
 
-function clicarFilial(botao) {
-    const conteudos = document.querySelectorAll('.conteudoOculto');
+function clicarFilial() {
+    const conteudos = document.querySelectorAll('.conteudoOcultoFilial');
+
     conteudos.forEach(conteudo => {
-        conteudo.style.display = conteudo.style.display === 'none' || conteudo.style.display === '' ? 'flex' : 'none';
+        if (conteudo.classList.contains('show')) {
+            conteudo.classList.remove('show');
+            setTimeout(() => (conteudo.style.display = 'none'), 300); // Espera o fim da transição
+        } else {
+            conteudo.style.display = 'flex'; // Garante que o elemento seja exibido
+            setTimeout(() => conteudo.classList.add('show'), 10); // Adiciona a classe com atraso
+        }
     });
 }
 

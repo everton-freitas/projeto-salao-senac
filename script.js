@@ -1,5 +1,6 @@
 function aparecerMenu() {
-    const menu = document.getElementById('menu-oculto');
-    menu.classList.toggle('show');
-    header.classList.toggle('push'); // Empurra ou retorna o header
-}
+    menu = document.querySelector('#menu-oculto')
+    header = document.querySelector('#header')
+    menu.classList.toggle('show')
+    header.classList.toggle('push')
+} 

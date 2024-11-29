@@ -650,6 +650,11 @@ article img {
 
     #header.push {
         margin-left: 250px;
+        transition: 0.3s ease-in-out;
+    }
+
+    #header {
+        transition: 0.3s ease-in-out;
     }
 
 
