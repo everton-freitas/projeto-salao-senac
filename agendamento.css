@@ -25,7 +25,7 @@ main {
 img {
     
     margin-top: 10px;
-    width: 120px;
+    width: 115px;
     height: 74.66px;
     margin-bottom: 80px;
 }
@@ -42,10 +42,11 @@ img {
 
 #container2 {
     background-color: #f7f9fa;
-    padding: 20px 24px;
+    padding: 20px 24px 0px 24px;
     display: flex;
     justify-content: center;
     height: 100%;
+    
 }
 
 #container2-1 > p {
@@ -59,14 +60,78 @@ img {
     display: flex;
     height: 64px;
     background-color: #fff;
-    margin-bottom: 8px;
+    margin-top: 8px;
     align-items: center;
     padding: 0px 16.5px;
     width: 100%;
     border-radius: 7px;
     cursor: pointer;
+    border: 1px solid lightgray;
+    flex: 0 0 auto;
 }
 
+.botao.ativa {
+    border-radius: 7px 7px 0 0;
+}
+
+#precoFinal {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: auto;
+    position: relative;
+    left: 15px;
+}
+
+#final {
+    margin-top: auto;
+}
+
+.botao2 {
+    background-color: white;
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    align-items: center;
+    padding: 8px 16.5px;
+    width: 100%;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid lightgray;
+    border-radius: 0px;
+    border-top: none;
+    align-items: center;
+    font-size: 15px;
+    flex: 0 0 auto;
+}
+
+.botao2:hover {
+    background-color: rgb(247, 247, 247);
+    transition: 0.5s;
+}
+
+
+.botao2:last-of-type {
+    border-bottom-left-radius: 7px; /* Ajuste o valor conforme necessário */
+    border-bottom-right-radius: 7px; /* Ajuste o valor conforme necessário */
+}
+
+#subcategoriaOpcoes {
+    margin-bottom: 45px;
+
+}
+
+.conteudoOcultoSub, .conteudoOcultoServico, .conteudoOcultoFilial {
+    display: none; /* Mantém as opções escondidas inicialmente */
+    opacity: 0; /* Torna invisível */
+    transform: translateY(-10px); /* Move para cima um pouco */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
+}
+
+.conteudoOcultoSub.show, .conteudoOcultoServico.show, .conteudoOcultoFilial.show {
+    display: block; /* Mostra a opção */
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Volta à posição original */
+}
 
 
 #agendar {
@@ -77,7 +142,8 @@ img {
     padding: 20px 15px;
     cursor: pointer; /* Para indicar que é um botão clicável */
     border-radius: 7px; /* Para deixar as bordas arredondadas */
-    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 #agendar:hover {
@@ -248,7 +314,7 @@ nav {
         padding: 20px 15px;
         cursor: pointer; /* Para indicar que é um botão clicável */
         border-radius: 7px; /* Para deixar as bordas arredondadas */
-        
+        margin-top: 10px;
     }
 
     #container2-1 > p {
@@ -294,11 +360,10 @@ nav {
     }
 
 
-
     
 
     #container2 {
-        height: 89vh;
+        height: 87vh;
     }
 
     #container2-1 > p {

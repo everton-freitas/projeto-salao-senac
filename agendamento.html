@@ -59,6 +59,7 @@
                     <div id="ligacao"><i class="bi2 bi-calendar-event-fill"></i><p>Agendamento</p></div>
                     <div id="ligacao"><i class="bi2 bi-person-fill"></i><p>Perfil</p></div>
                     <div id="ligacao"><i class="bi2 bi-x-circle-fill"></i><p>Sair</p></div>
+                    <!-- pointer-events: none; opacity: 0.6; -->
                 </nav>
             </div>
     
@@ -66,63 +67,63 @@
                 <div id="container2">
                     <div id="container2-1">
                         <p>Selecione os detalhes do seu agendamento</p>
-                        <div class="botao" id="openModalBtn">
-                            <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 30 27" fill="none">
-                                <path d="M15 23.3333H5V16.6667H15M30 16.6667V13.3333L28.3333 5H1.66667L0 13.3333V16.6667H1.66667V26.6667H18.3333V16.6667H25V26.6667H28.3333V16.6667M28.3333 0H1.66667V3.33333H28.3333V0Z" fill="black"/>
-                            </svg><p class="a1" id="filialSelecionada">Selecione a filial</p>
-                        </div>
-                        <div class="botao" id="openModalBtn2" style="pointer-events: none; opacity: 0.6;">
-                            <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 35 27" fill="none">
-                                <path d="M2.91667 13.125C2.91667 9.04167 5.25 5.54167 8.75 3.9375V0.729167C3.64583 2.625 0 7.4375 0 13.125C0 18.8125 3.64583 23.625 8.75 25.5208V22.3125C5.25 20.7083 2.91667 17.2083 2.91667 13.125ZM21.875 0C14.5833 0 8.75 5.83333 8.75 13.125C8.75 20.4167 14.5833 26.25 21.875 26.25C29.1667 26.25 35 20.4167 35 13.125C35 5.83333 29.1667 0 21.875 0ZM29.1667 14.5833H23.3333V20.4167H20.4167V14.5833H14.5833V11.6667H20.4167V5.83333H23.3333V11.6667H29.1667V14.5833Z" fill="black"/>
-                            </svg><p class="a1" id="servicoSelecionado">Selecione o tipo de serviço</p>
-                        </div>
-                        <div class="botao" id="openModalBtn3" style="pointer-events: none; opacity: 0.6;">
-                            <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                              </svg>
-                            </svg><p class="a1" id="subSelecionado">Selecione o serviço</p>
-                        </div>
+
+<!-- Botão para Selecionar a Filial -->
+<div class="botao" id="openModalBtn" onclick="clicarFilial(this)">
+    <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 30 27" fill="none">
+        <path d="M15 23.3333H5V16.6667H15M30 16.6667V13.3333L28.3333 5H1.66667L0 13.3333V16.6667H1.66667V26.6667H18.3333V16.6667H25V26.6667H28.3333V16.6667M28.3333 0H1.66667V3.33333H28.3333V0Z" fill="black"/>
+    </svg>
+    <p class="a1" id="textoBotao">Selecione a filial</p>
+</div>
+
+<div>
+    <div class="botao2 conteudoOculto" style="display: none;" onclick="selecionarFilial('Salão Senac Recife')">
+        <p class="a1"><strong>Salão Senac Recife</strong><br>Av. Visconde Suassuna - 440</p>
+    </div>
+</div>
+
+<!-- Botão para Selecionar o Tipo de Serviço -->
+<div class="botao" id="openModalBtn2" style="pointer-events: none; opacity: 0.6;" onclick="clicarServico(this)">
+    <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 35 27" fill="none">
+        <path d="M2.91667 13.125C2.91667 9.04167 5.25 5.54167 8.75 3.9375V0.729167C3.64583 2.625 0 7.4375 0 13.125C0 18.8125 3.64583 23.625 8.75 25.5208V22.3125C5.25 20.7083 2.91667 17.2083 2.91667 13.125ZM21.875 0C14.5833 0 8.75 5.83333 8.75 13.125C8.75 20.4167 14.5833 26.25 21.875 26.25C29.1667 26.25 35 20.4167 35 13.125C35 5.83333 29.1667 0 21.875 0ZM29.1667 14.5833H23.3333V20.4167H20.4167V14.5833H14.5833V11.6667H20.4167V5.83333H23.3333V11.6667H29.1667V14.5833Z" fill="black"/>
+    </svg>
+    <p class="a1" id="servicoSelecionado">Selecione o tipo de serviço</p>
+</div>
+
+<!-- Opções do Tipo de Serviço -->
+<div>
+    <div class="botao2 conteudoOcultoServico" style="display: none;" onclick="selecionarServico('Corte de Cabelo Masculino e Barba')">
+        <p class="a1">Corte de Cabelo Masculino e Barba</p>
+    </div>
+    <div class="botao2 conteudoOcultoServico" style="display: none;" onclick="selecionarServico('Corte de Cabelo Feminino')">
+        <p class="a1">Corte de Cabelo Feminino</p>
+    </div>
+    <div class="botao2 conteudoOcultoServico" style="display: none;" onclick="selecionarServico('Manicure e Pedicure')">
+        <p class="a1">Manicure e Pedicure</p>
+    </div>
+    <div class="botao2 conteudoOcultoServico" style="display: none;" onclick="selecionarServico('Hidratação Capilar')">
+        <p class="a1">Hidratação Capilar</p>
+    </div>
+</div>
+
+<!-- Botão para Selecionar Subcategorias -->
+<div class="botao" id="openModalBtn3" style="pointer-events: none; opacity: 0.6;" onclick="clicarSubcategoria(this)">
+    <svg class="bi" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+    <p class="a1" id="subSelecionado">Selecione o serviço</p>
+</div>
+
+<div id="subcategoriaOpcoes"></div>
+<div id="final">
+<p id="precoFinal" style="display: none;">Preço final: R$ 0,00</p>
                         <p id="agendar">Agendar</p>
                     </div>
-                </div>
-            </div>
-    
-            <!-- Modal para filiais -->
-            <div id="modalFilial" class="modal-custom">
-                <div class="modal-content-custom">
-                    <span class="close-custom" id="closeFilial">&times;</span>
-                    <p class="modal-title">Selecione uma de nossas filiais</p>
-                    <div id="botao-model-filial" onclick="selecionar('Salao Senac Recife', 'filialSelecionada')">
-                        <p><strong>Salao Senac Recife</strong></p><p>Av. Visconde Suassuna - 440</p>
                     </div>
                 </div>
             </div>
     
-            <!-- Modal para serviços -->
-            <div id="modalServico" class="modal-custom">
-                <div class="modal-content-custom">
-                    <span class="close-custom" id="closeServico">&times;</span>
-                    <p class="modal-title">Selecione um de nossos serviços</p>
-                    <div class="botao-model-servico" onclick="selecionar('Transformação de Formas e Texturas dos Cabelos Femininos', 'servicoSelecionado')">
-                        <p><strong>Transformação de Formas e Texturas dos Cabelos Femininos</strong></p>
-                    </div>
-                    <div class="botao-model-servico" onclick="selecionar('Depilação com Luz Pulsada - Pacote com 10 sessões', 'servicoSelecionado')">
-                        <p><strong>Depilação com Luz Pulsada - Pacote com 10 sessões</strong></p>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Modal para subserviços -->
-            <div id="modalSub" class="modal-custom">
-                <div class="modal-content-custom">
-                    <span class="close-custom" id="closeSub">&times;</span>
-                    <p class="modal-title">Selecione o serviço</p>
-                    <div id="botao-model-sub" onclick="selecionar('Alisamento Capilar com Hidróxidos (sódio ou Guanidina) + Tratamento c/finalização', 'subSelecionado')">
-                        <p><strong>Alisamento Capilar com Hidróxidos (sódio ou Guanidina) + Tratamento c/finalização</strong></p>
-                    </div>
-                </div>
-            </div>
-    
+            
             <script src="agendamento.js">
             </script>
         </main>
