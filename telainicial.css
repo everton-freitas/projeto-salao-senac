@@ -638,14 +638,11 @@ article img {
     
 
     header {
-        position: fixed; /* Fixa o header no topo */
-        top: 0;
         left: 0;
-        width: 100vw; /* Ocupa toda a largura da tela */
-        background-color: #f4f4f4; /* Cor de fundo do header */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-        z-index: 1000; /* Garante que fique acima do menu */
-        transition: transform 0.3s ease-in-out; /* Transição para empurrar */
+        width: 100vw;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; 
+        transition: transform 0.3s ease-in-out; 
     }
 
     #header.push {
