@@ -265,11 +265,6 @@ input:focus, textarea:focus {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destaque */
 }
 
- /* Fim entrada */
- 
- 
- /* Inicio turmas */
-
 #turmas p {
     margin-top: 50px;
     /* margin-left: 370px; */
