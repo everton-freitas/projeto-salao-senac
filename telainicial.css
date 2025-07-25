@@ -635,7 +635,6 @@ article img {
     header {
         left: 0;
         width: 100vw;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 1000; 
         transition: transform 0.3s ease-in-out; 
     }
